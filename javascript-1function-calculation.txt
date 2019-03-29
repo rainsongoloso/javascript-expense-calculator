@@ -1,0 +1,37 @@
+function inValues() {
+	var expN = document.getElementById('exN').value;
+	var aM = document.getElementById('aM').value;
+	var expObj,id;
+	var sum = 0;
+	
+
+	//Constructor for creating Expsenses object
+	
+	
+	//Create new ID
+	if (data.length > 0) {
+        id = data[data.length - 1].id + 1;
+    } else {
+        id = 0;
+    }
+
+    //Create object then push it to the array Data
+	expObj = new Expenses(id,expN,aM);
+	data.push(expObj);
+
+	//Calculate total Expenses
+
+	for(var i = 0; i < data.length; i++) {
+		var toInteger = parseInt(data[i].aM,10);
+		sum += toInteger; 
+	}
+
+	//Display one by one
+	for(var c = 0; c < data.length; c++) {
+		console.log("Expense Details and totals");
+		console.log("EXP ID =" + " " +data[c].id);
+		console.log("EXP Expense Name =" + " " +data[c].expN);
+		console.log("EXP Amount =" + " " +data[c].aM);
+	}
+	console.log("Total Expenses =" + " " + sum);
+}
